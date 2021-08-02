@@ -1,0 +1,37 @@
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Debug\netcoreapp3.1\appsettings.Development.json
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Debug\netcoreapp3.1\appsettings.json
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Debug\netcoreapp3.1\BA2 Core.exe
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Debug\netcoreapp3.1\BA2 Core.deps.json
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Debug\netcoreapp3.1\BA2 Core.runtimeconfig.json
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Debug\netcoreapp3.1\BA2 Core.runtimeconfig.dev.json
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Debug\netcoreapp3.1\BA2 Core.dll
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Debug\netcoreapp3.1\BA2 Core.pdb
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Debug\netcoreapp3.1\BA2 Core.Views.dll
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Debug\netcoreapp3.1\BA2 Core.Views.pdb
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\BA2 Core.csproj.AssemblyReference.cache
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\BA2 Core.AssemblyInfoInputs.cache
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\BA2 Core.AssemblyInfo.cs
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\BA2 Core.csproj.CoreCompileInputs.cache
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\BA2 Core.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\BA2 Core.RazorAssemblyInfo.cache
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\BA2 Core.RazorAssemblyInfo.cs
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\staticwebassets\BA2 Core.StaticWebAssets.Manifest.cache
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\staticwebassets\BA2 Core.StaticWebAssets.xml
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\scopedcss\bundle\BA2 Core.styles.css
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\BA2 Core.TagHelpers.input.cache
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\BA2 Core.TagHelpers.output.cache
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\BA2 Core.RazorCoreGenerate.cache
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\Razor\Pages\Error.cshtml.g.cs
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\Razor\Pages\Index.cshtml.g.cs
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\Razor\Pages\Privacy.cshtml.g.cs
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_Layout.cshtml.g.cs
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\Razor\Pages\Shared\_ValidationScriptsPartial.cshtml.g.cs
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewImports.cshtml.g.cs
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\Razor\Pages\_ViewStart.cshtml.g.cs
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\BA2 Core.RazorTargetAssemblyInfo.cache
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\BA2 Core.RazorTargetAssemblyInfo.cs
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\BA2 Core.Views.pdb
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\BA2 Core.dll
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\BA2 Core.pdb
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\BA2 Core.genruntimeconfig.cache
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\obj\Debug\netcoreapp3.1\BA2 Core.csproj.CopyComplete

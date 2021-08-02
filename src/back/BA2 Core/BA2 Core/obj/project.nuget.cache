@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "SpA4p6xNnEcFqSfWCtMdCkqWlRT4iQmtO8EsukOoloQcuNS0kaeNENbGbkuDYa77JyRrJh7bOJ7ugDQ8GRmtOA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\etien\\Documents\\GitHub\\Arena-Projekt\\src\\back\\BA2 Core\\BA2 Core\\BA2 Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\etien\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.10.14\\microsoft.visualstudio.azure.containers.tools.targets.1.10.14.nupkg.sha512"
+  ],
+  "logs": []
+}
