@@ -26,3 +26,7 @@ C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\Core.Unity\obj\D
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\Core.Unity\obj\Debug\netcoreapp3.1\Core.Unity.dll
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\Core.Unity\obj\Debug\netcoreapp3.1\Core.Unity.pdb
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\Core.Unity\obj\Debug\netcoreapp3.1\Core.Unity.genruntimeconfig.cache
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\Core.Unity\bin\Debug\netcoreapp3.1\Humanizer.dll
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\Core.Unity\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\Core.Unity\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\Core.Unity\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Core.Services.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -11,17 +12,19 @@ namespace BA2_Core.Controller
     public class UserController : ControllerBase
     {
         private readonly IMapper _mapper;
+        private readonly IUserService userService;
 
-        public UserController(IMapper mapper)
+        public UserController(IMapper mapper, IUserService userService)
         {
             _mapper = mapper;
+            this.userService = userService;
         }
 
-        [Route("testRoute")]
+        [Route("userExists")]
         [HttpGet]
-        public IActionResult TestRoute()
+        public IActionResult UserExists([FromQuery]string Username, string Password)
         {
-            return Ok();
+            return Ok(userService.DoesUserExist(Username, Password));
         }
     }
 }
