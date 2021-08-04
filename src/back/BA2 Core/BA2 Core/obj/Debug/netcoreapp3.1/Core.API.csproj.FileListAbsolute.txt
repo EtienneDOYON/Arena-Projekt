@@ -82,3 +82,6 @@ C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Deb
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Debug\netcoreapp3.1\Core.Services.exe
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Debug\netcoreapp3.1\Core.Services.dll
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Debug\netcoreapp3.1\Core.Services.pdb
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Debug\netcoreapp3.1\Microsoft.Azure.Functions.Extensions.dll
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Debug\netcoreapp3.1\Microsoft.Azure.WebJobs.Host.dll
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Debug\netcoreapp3.1\Microsoft.Azure.WebJobs.dll

@@ -14,16 +14,15 @@ namespace Wave.Data.Ef6
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : Entity
     {
-        protected DbSet<TEntity> DbSet => _dbSet;
-        protected CoreContext Context => _context;
+        protected DbSet<TEntity> DbSet => Context?.DbSet<TEntity>();
+        protected IQueryable<TEntity> ReadOnlyDbSet => Context?.DbSet<TEntity>().AsNoTracking();
 
-        private readonly DbSet<TEntity> _dbSet;
-        private readonly CoreContext _context;
+        protected CoreContext Context;
 
-        public Repository(CoreContext dataContext)
+        [InjectionMethod]
+        public void Initialize(CoreContext coreContext)
         {
-            this._context = dataContext;
-            this._dbSet = dataContext.Set<TEntity>();
+            Context = coreContext;
         }
 
         /// <summary>

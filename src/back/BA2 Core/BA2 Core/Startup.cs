@@ -17,12 +17,14 @@ using Wave.Data.Repositories;
 using Core.Data.Entities;
 using Core.Data.HelperModels;
 using Core.Data.UnitOfWork;
+using Microsoft.Azure.Functions.Extensions.DependencyInjection;
 
 namespace BA2_Core
 {
     public class Startup
     {
         private IUnityContainer _container;
+        private IServiceCollection _services;
 
         public Startup(IConfiguration configuration)
         {
@@ -35,6 +37,7 @@ namespace BA2_Core
         public void ConfigureServices(IServiceCollection services)
         {
             _container = new UnityContainer();
+            _services = services;
 
             services.AddControllersWithViews();
             services.AddSession();
@@ -43,6 +46,8 @@ namespace BA2_Core
             services.AddMemoryCache();
 
             services.AddDbContext<CoreContext>(option => option.UseSqlServer(_configuration.GetConnectionString("BA2_db")));
+            CoreContext context = new CoreContext();
+            context.setDbConnectionString(_configuration.GetConnectionString("BA2_db"));
 
             RegisterInjection(services, _container);
             services.AddTransient<IUnitOfWork, UnitOfWork>();

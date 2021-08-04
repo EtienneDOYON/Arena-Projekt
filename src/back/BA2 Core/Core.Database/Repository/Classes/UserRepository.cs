@@ -10,18 +10,11 @@ namespace Core.Data.Repository.Classes
 {
     public class UserRepository : Repository<User>, IUserRepository
     {
-        private readonly CoreContext _context;
-
         public bool IsUserValid(string Username, string Password)
         {
-            return _context.Us
+            return DbSet
                 .Where(user => user.Username == Username && user.Password == Password && user.EntityState != HelperModels.State.Deleted)
                 .Any();
-        }
-
-        public UserRepository(CoreContext context) : base(context)
-        {
-            _context = context;
         }
     }
 }
