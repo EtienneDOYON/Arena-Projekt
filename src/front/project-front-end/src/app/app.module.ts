@@ -15,6 +15,8 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 
+import { FormsModule } from '@angular/forms';
+
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'users', component: UsersComponent},
@@ -34,6 +36,7 @@ const appRoutes: Routes = [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(appRoutes),
     TranslateModule.forRoot({
       loader: {

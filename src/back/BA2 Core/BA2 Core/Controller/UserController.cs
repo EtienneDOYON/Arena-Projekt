@@ -1,10 +1,7 @@
 ﻿using AutoMapper;
 using Core.Services.Services.Interfaces;
+using System.Web.Http.Cors;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BA2_Core.Controller
 {
@@ -20,9 +17,10 @@ namespace BA2_Core.Controller
             this.userService = userService;
         }
 
-        [Route("userExists")]
+        [EnableCors(origins: "*", headers: "*", methods: "*")]
+        [Route("connectUser")]
         [HttpGet]
-        public IActionResult UserExists([FromQuery]string Username, string Password)
+        public IActionResult ConnectUser([FromQuery]string Username, string Password)
         {
             return Ok(userService.DoesUserExist(Username, Password));
         }

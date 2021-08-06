@@ -11,13 +11,8 @@ using Core.Data.Repository.Interfaces;
 using Core.Data.Repository.Classes;
 using Core.Services.Services.Classes;
 using Core.Services.Services.Interfaces;
-using Unity.Injection;
-using Wave.Data.Ef6;
-using Wave.Data.Repositories;
-using Core.Data.Entities;
-using Core.Data.HelperModels;
 using Core.Data.UnitOfWork;
-using Microsoft.Azure.Functions.Extensions.DependencyInjection;
+using System.Web.Http.Cors;
 
 namespace BA2_Core
 {
@@ -25,6 +20,8 @@ namespace BA2_Core
     {
         private IUnityContainer _container;
         private IServiceCollection _services;
+
+        private readonly string AllowAll = "_AllowAll";
 
         public Startup(IConfiguration configuration)
         {
@@ -38,6 +35,17 @@ namespace BA2_Core
         {
             _container = new UnityContainer();
             _services = services;
+
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: AllowAll,
+                                    builder =>
+                                    {
+                                        builder.AllowAnyOrigin()
+                                                .AllowAnyMethod()
+                                                .AllowAnyHeader();
+                                    });
+            });
 
             services.AddControllersWithViews();
             services.AddSession();
@@ -66,6 +74,7 @@ namespace BA2_Core
             }
 
             app.UseRouting();
+            app.UseCors(AllowAll);
 
             app.UseAuthorization();
 

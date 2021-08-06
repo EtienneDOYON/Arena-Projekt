@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserFactory } from '../factories/user.factory';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  user_name = "";
+  user_pwd = "";
+
+  constructor(private userFactory: UserFactory) {
+  }
 
   ngOnInit(): void {
+  }
+
+  public ConnectUser() {
+    if (!this.user_name || !this.user_pwd) {
+      return;
+    }
+
+    var a = this.userFactory.connectUser(this.user_name, this.user_pwd);
+    console.log(a);
   }
 
 }

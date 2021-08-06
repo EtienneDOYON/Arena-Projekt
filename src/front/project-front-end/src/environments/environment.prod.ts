@@ -1,3 +1,6 @@
 export const environment = {
-  production: true
+  production: true,
+
+// TODO : BASE URL FOR PROD
+  baseCoreUrl: '',
 };
