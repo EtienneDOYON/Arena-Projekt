@@ -1,20 +1,24 @@
 ﻿using Core.Identity.Models.Enum;
-using Microsoft.AspNet.Identity.EntityFramework;
+using Core.Identity.Models.Helpers;
+using Microsoft.AspNetCore.Identity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
 namespace Core.Identity.Models.Models
 {
-    public class ApplicationUser
+    public class ApplicationUser : IdentityUser, IEntity<Guid>
     {
-        public int RoleId { get; set; }
+        [Key]
+        public Guid Id { get; set; }
 
-        [ForeignKey(nameof RoleId)]
+
+/*        public int RoleId { get; set; }
+
+        [ForeignKey("RoleId")]
         public virtual UserRole Role { get; set; }
-
-        public string Username { get; set; }
 
         public Language Language { get; set; }
 
@@ -27,7 +31,7 @@ namespace Core.Identity.Models.Models
         // Audit data
         public DateTime CreationTime { get; set; }
 
-        public DateTime? LastEditionTime { get; set; }
+        public DateTime? LastEditionTime { get; set; }*/
 
 
         public virtual ICollection<IdentityUserClaim<string>> Claims { get; } = new List<IdentityUserClaim<string>>();

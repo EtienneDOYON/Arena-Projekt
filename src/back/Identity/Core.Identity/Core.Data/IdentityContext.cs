@@ -1,12 +1,11 @@
 ﻿using Core.Identity.Models.Models;
 using Microsoft.AspNetCore.DataProtection.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Security.Claims;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -15,6 +14,7 @@ namespace Core.Data
     public class IdentityContext : IdentityDbContext<ApplicationUser>, IDataProtectionKeyContext
     {
         protected readonly IHttpContextAccessor _contextAccessor;
+
 
         protected IdentityContext(DbContextOptions<IdentityContext> options) : base(options)
         {
@@ -31,7 +31,7 @@ namespace Core.Data
 
         DbSet<DataProtectionKey> IDataProtectionKeyContext.DataProtectionKeys { get; }
 
-        public override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             foreach(var m in modelBuilder.Model.GetEntityTypes())
             {
@@ -68,7 +68,7 @@ namespace Core.Data
 
         protected void ApplyPolicies()
         {
-            var userId = _contextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+//            var userId = _contextAccessor.HttpContext?.User?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
         }
     }
 }

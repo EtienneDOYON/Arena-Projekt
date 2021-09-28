@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BA2_Core.Controller
 {
+    [ApiController]
     [Route("api")]
     public class UserController : ControllerBase
     {

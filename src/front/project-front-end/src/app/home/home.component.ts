@@ -11,19 +11,29 @@ export class HomeComponent implements OnInit {
   user_name = "";
   user_pwd = "";
 
+  LogInFailure = false;
+  LogInSuccess = false;
+
   constructor(private userFactory: UserFactory) {
   }
 
   ngOnInit(): void {
   }
 
-  public ConnectUser() {
+  public async ConnectUser() {
     if (!this.user_name || !this.user_pwd) {
       return;
     }
 
-    var a = this.userFactory.connectUser(this.user_name, this.user_pwd);
-    console.log(a);
+    var connectionResult = await this.userFactory.connectUser(this.user_name, this.user_pwd);
+
+    if (connectionResult == "false") {
+      this.LogInFailure = true;
+      this.LogInSuccess = false;
+    } else if (connectionResult == "true") {
+      this.LogInFailure = false;
+      this.LogInSuccess = true;
+    }
   }
 
 }

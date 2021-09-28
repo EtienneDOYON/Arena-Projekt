@@ -1,4 +1,5 @@
-﻿using Core.Identity.Models.Models;
+﻿using Core.Data;
+using Core.Identity.Models.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System;

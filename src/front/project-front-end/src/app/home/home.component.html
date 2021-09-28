@@ -8,3 +8,7 @@
     <input type="text" id="password" name="password" type="password" size="10" [(ngModel)]="user_pwd">
     <button class="ml-10 connect-button" (click)="ConnectUser()"></button>
 </div>
+<div>
+    <label *ngIf="LogInFailure">{{ 'Home.OnConnectionFailure' | translate }}</label>
+    <label *ngIf="LogInSuccess">{{ 'Home.OnConnectionSuccess1' | translate }}{{user_name}}{{ 'Home.OnConnectionSuccess2' | translate }}</label>
+</div>
