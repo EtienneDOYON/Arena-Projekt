@@ -102,3 +102,7 @@ C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Co
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Core.Identity\obj\Debug\net5.0\ref\Core.Identity.dll
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Core.Identity\obj\Debug\net5.0\Core.Identity.pdb
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Core.Identity\obj\Debug\net5.0\Core.Identity.genruntimeconfig.cache
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Core.Identity\bin\Debug\net5.0\Unity.Abstractions.dll
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Core.Identity\bin\Debug\net5.0\Unity.Container.dll
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Core.Identity\bin\Debug\net5.0\Core.Services.dll
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Core.Identity\bin\Debug\net5.0\Core.Services.pdb

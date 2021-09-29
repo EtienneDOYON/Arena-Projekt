@@ -5,9 +5,11 @@ VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Identity", "Core.Identity\Core.Identity.csproj", "{496B30C4-0FA0-42DD-B7E2-5BE7378BB20E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Identity.Models", "Core.Identity.Models\Core.Identity.Models.csproj", "{E9748800-3C3A-4781-AD9B-F0F96145EF5B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Identity.Models", "Core.Identity.Models\Core.Identity.Models.csproj", "{E9748800-3C3A-4781-AD9B-F0F96145EF5B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Data", "Core.Data\Core.Data.csproj", "{E5C7ECAC-D09D-457A-8EE5-5907A22991C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core.Data", "Core.Data\Core.Data.csproj", "{E5C7ECAC-D09D-457A-8EE5-5907A22991C3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core.Services", "Core.Services\Core.Services.csproj", "{36B4D5AB-9AC4-429D-A04C-640823E07D36}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{E5C7ECAC-D09D-457A-8EE5-5907A22991C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E5C7ECAC-D09D-457A-8EE5-5907A22991C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E5C7ECAC-D09D-457A-8EE5-5907A22991C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{36B4D5AB-9AC4-429D-A04C-640823E07D36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{36B4D5AB-9AC4-429D-A04C-640823E07D36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{36B4D5AB-9AC4-429D-A04C-640823E07D36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{36B4D5AB-9AC4-429D-A04C-640823E07D36}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

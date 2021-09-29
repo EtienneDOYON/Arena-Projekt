@@ -17,5 +17,6 @@ namespace Core.Identity.Models.Models
         public string Name { get; set; }
         public Level Level { get; set; }
         public virtual ICollection<ApplicationUser> Users { get; set; }
+        public State EntityState { get; set; }
     }
 }

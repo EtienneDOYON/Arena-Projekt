@@ -16,10 +16,18 @@ export class UserFactory {
 
 
   async connectUser(username: string, password: string) {
-    let url = environment.baseCoreUrl + '/connectUser?username=' + username + '&password=' + password;
+    let url = environment.baseCoreUrl + '/Login';
 
-    const ret: String = await this.http.get(url, {responseType: 'text'}).toPromise();
-    
-    return ret;
+    var body = {
+      Username: username,
+      Password: password
+    };
+
+    try {
+      const ret: any = JSON.parse(await this.http.post(url, body, {responseType: 'text'}).toPromise());
+      return ret;
+    } catch (e) {
+      console.log(e);
+    }
   }
 }

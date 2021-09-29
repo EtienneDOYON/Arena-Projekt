@@ -1,4 +1,5 @@
 ﻿using Core.Data;
+using Core.Identity.Data;
 using Core.Identity.Models.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -27,7 +28,7 @@ namespace Core.Identity.Controllers
 
         protected void SaveChanges()
         {
-            var context = (IdentityContext)HttpContext.RequestServices.GetService(typeof(IdentityContext));
+            var context = (ApplicationDbContext)HttpContext.RequestServices.GetService(typeof(ApplicationDbContext));
             context.SaveChanges();
         }
 

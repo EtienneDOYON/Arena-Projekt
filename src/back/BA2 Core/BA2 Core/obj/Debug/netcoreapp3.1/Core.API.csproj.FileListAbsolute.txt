@@ -76,10 +76,6 @@ C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Deb
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Debug\netcoreapp3.1\Core.Data.dll
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Debug\netcoreapp3.1\Core.Data.pdb
-C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Debug\netcoreapp3.1\Core.Services.deps.json
-C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Debug\netcoreapp3.1\Core.Services.runtimeconfig.json
-C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Debug\netcoreapp3.1\Core.Services.runtimeconfig.dev.json
-C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Debug\netcoreapp3.1\Core.Services.exe
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Debug\netcoreapp3.1\Core.Services.dll
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Debug\netcoreapp3.1\Core.Services.pdb
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\BA2 Core\BA2 Core\bin\Debug\netcoreapp3.1\Microsoft.Azure.Functions.Extensions.dll

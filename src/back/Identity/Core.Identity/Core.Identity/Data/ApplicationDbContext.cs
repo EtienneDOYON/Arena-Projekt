@@ -16,7 +16,10 @@ namespace Core.Identity.Data
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IDataProtectionKeyContext
     {
         protected readonly IHttpContextAccessor _contextAccessor;
+        static string DbConnectionString { get; set; }
 
+        public ApplicationDbContext()
+        { }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
@@ -25,6 +28,12 @@ namespace Core.Identity.Data
         public ApplicationDbContext(IHttpContextAccessor contextAccessor, DbContextOptions<ApplicationDbContext> options) : base(options)
         {
             _contextAccessor = contextAccessor;
+        }
+
+
+        public void setDbConnectionString(string connectionString)
+        {
+            DbConnectionString = connectionString;
         }
 
 
@@ -52,6 +61,23 @@ namespace Core.Identity.Data
                         .HasColumnName(nameof(IdentityUserClaim<string>.UserId));
 
             modelBuilder.Entity<ApplicationUser>().HasMany(x => x.Claims).WithOne().HasForeignKey(x => x.UserId);
+        }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                Console.Error.WriteLine("ERR - DbContext is not configured. Configuring...");
+                var connString = DbConnectionString;
+                optionsBuilder
+                    //                    .UseLoggerFactory(MyConsoleLoggerFactory)
+                    .EnableSensitiveDataLogging(false)
+                    .UseSqlServer(connString, options => options.MaxBatchSize(150));
+            }
+            else
+            {
+                Console.Out.WriteLine("DbContext correctly configured.");
+            }
         }
 
         public override int SaveChanges(bool acceptAllChangesOnSuccess)
