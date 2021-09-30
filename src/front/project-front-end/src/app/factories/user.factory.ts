@@ -1,6 +1,8 @@
-import { HttpClient, HttpHeaders, HttpRequest } from "@angular/common/http";
+import { HttpClient, HttpErrorResponse, HttpHeaders, HttpRequest } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { environment } from "src/environments/environment";
+import { ToastrService } from 'ngx-toastr';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
     providedIn: 'root'
@@ -8,7 +10,7 @@ import { environment } from "src/environments/environment";
 
 export class UserFactory {
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private toastr: ToastrService, private translate: TranslateService) {
   }
 
   ngOnInit(): void {
@@ -26,8 +28,8 @@ export class UserFactory {
     try {
       const ret: any = JSON.parse(await this.http.post(url, body, {responseType: 'text'}).toPromise());
       return ret;
-    } catch (e) {
-      console.log(e);
+    } catch (err: any) {
+      this.toastr.warning(this.translate.instant("Home." + err.error), "");
     }
   }
 }
