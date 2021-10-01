@@ -9,7 +9,7 @@ import { TokenFactory } from './token.factory'
     providedIn: 'root'
 })
 
-export class UserFactory {
+export class WarriorFactory {
 
   constructor(private http: HttpClient, private toastr: ToastrService, private translate: TranslateService, private tokenFactory: TokenFactory) {
   }
@@ -17,21 +17,15 @@ export class UserFactory {
   ngOnInit(): void {
   }
 
+  async GetAllWarriors()
+  {
+    let url = environment.baseCoreUrl + 'warriors';
 
-  async connectUser(username: string, password: string) {
-    let url = environment.baseCoreUrl + 'user/Login';
-
-    var body = {
-      Username: username,
-      Password: password
-    };
-
-    const ret: any = await this.tokenFactory.postWithoutToken(url, body);
+    const ret: any = await this.tokenFactory.get(url);
     if (ret.error) {
       this.toastr.warning(this.translate.instant("Error." + ret.error), "");
     } else {
       return ret;
     }
   }
-
 }

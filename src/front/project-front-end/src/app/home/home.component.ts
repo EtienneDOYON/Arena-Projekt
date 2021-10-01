@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserFactory } from '../factories/user.factory';
+import { WarriorFactory } from '../factories/warrior.factory';
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,7 @@ export class HomeComponent implements OnInit {
   LogInFailure = false;
   LogInSuccess = false;
 
-  constructor(private userFactory: UserFactory) {
+  constructor(private userFactory: UserFactory, private warriorFactory: WarriorFactory) {
   }
 
   ngOnInit(): void {
@@ -27,13 +28,19 @@ export class HomeComponent implements OnInit {
 
     var connectionResult = await this.userFactory.connectUser(this.user_name, this.user_pwd);
 
-    if (connectionResult == "false") {
+    if (!connectionResult) {
       this.LogInFailure = true;
       this.LogInSuccess = false;
-    } else if (connectionResult == "true") {
+    } else {
       this.LogInFailure = false;
       this.LogInSuccess = true;
+
+      localStorage.setItem("UserToken", connectionResult.access_token);
     }
+  }
+
+  public async CheckToken() {
+    var connectionResult = await this.warriorFactory.GetAllWarriors();
   }
 
 }

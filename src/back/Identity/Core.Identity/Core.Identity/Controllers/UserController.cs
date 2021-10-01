@@ -17,7 +17,7 @@ using System.Threading.Tasks;
 namespace Core.Identity.Controllers
 {
     [ApiController]
-    [Route("auth")]
+    [Route("user")]
     public class UserController : ControllerBase
     {
         private readonly UserManager<ApplicationUser> userManager;

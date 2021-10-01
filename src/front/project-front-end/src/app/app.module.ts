@@ -10,6 +10,7 @@ import { UsersComponent } from './users/users.component';
 
 import {Routes} from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { NotAllowedComponent } from './not-allowed/not-allowed.component';
 
 import { RouterModule } from '@angular/router';
 
@@ -25,6 +26,7 @@ const appRoutes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'users', component: UsersComponent},
   {path: 'notFound', component: NotFoundComponent},
+  {path: 'notAllowed', component: NotAllowedComponent},
 
   {path: '**', redirectTo: '/notFound', pathMatch: 'full'}
 ];
@@ -34,7 +36,8 @@ const appRoutes: Routes = [
     AppComponent,
     HomeComponent,
     UsersComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    NotAllowedComponent
   ],
   imports: [
     BrowserModule,

@@ -3,11 +3,14 @@
         "Title": "Battle Arenas 2, j'imagine ?",
         "Username": "Nom d'utilisateur",
         "Password": "Mot de passe",
-        "InvalidUsernameOrPassword": "Identifiant ou mot de passe incorrect",
         "OnConnectionSuccess1": "Bienvenue ",
         "OnConnectionSuccess2": ", merci de patienter"
     },
     "Global": {
         "Error": "Une erreur est survenue"
+    },
+    "Error": {
+        "InvalidUsernameOrPassword": "Identifiant ou mot de passe incorrect",
+        "NotAllowed": "Vous n'êtes pas autorisé à faire cette action"
     }
 }
