@@ -48,7 +48,6 @@ C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Co
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Core.Identity\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.dll
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Core.Identity\bin\Debug\net5.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Core.Identity\bin\Debug\net5.0\Microsoft.IdentityModel.Tokens.dll
-C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Core.Identity\bin\Debug\net5.0\Newtonsoft.Json.dll
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Core.Identity\bin\Debug\net5.0\System.Configuration.ConfigurationManager.dll
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Core.Identity\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Core.Identity\bin\Debug\net5.0\System.IdentityModel.Tokens.Jwt.dll
@@ -106,3 +105,6 @@ C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Co
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Core.Identity\bin\Debug\net5.0\Unity.Container.dll
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Core.Identity\bin\Debug\net5.0\Core.Services.dll
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Core.Identity\bin\Debug\net5.0\Core.Services.pdb
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Core.Identity\bin\Debug\net5.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Core.Identity\bin\Debug\net5.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Core.Identity\bin\Debug\net5.0\Microsoft.AspNetCore.Metadata.dll

@@ -1,9 +1,11 @@
 using Core.Data;
 using Core.Identity.Data;
 using Core.Identity.Data.Repository;
+using Core.Identity.Helpers;
 using Core.Identity.Models.Models;
 using Core.Services.Classes;
 using Core.Services.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -33,6 +35,9 @@ namespace Core.Identity
         private IUnityContainer _container;
 
         private readonly string AllowAll = "_AllowAll";
+        private readonly string EmailTokenProvider = "EmailTokenProvider";
+        private readonly string JwtScheme = "godsgame-jwt-auth";
+        private readonly string AuthPolicy = "GodsGame";
 
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -68,14 +73,67 @@ namespace Core.Identity
                 options.SignIn.RequireConfirmedAccount = false;
                 options.SignIn.RequireConfirmedEmail = false;
                 options.SignIn.RequireConfirmedPhoneNumber = false;
+
+                options.Tokens.ProviderMap.Add(EmailTokenProvider, new TokenProviderDescriptor(typeof(DataProtectorTokenProvider<ApplicationUser>)));
+
             })
                 .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
+                .AddTokenProvider<DataProtectorTokenProvider<ApplicationUser>>(EmailTokenProvider);
+
+            services.Configure<DataProtectionTokenProviderOptions>(o =>
+            {
+                o.Name = "Secret";
+                o.TokenLifespan = TimeSpan.FromDays(30);
+            });
 
             services.AddScoped<IUnityContainer, UnityContainer>();
             InjectDependencies(services, _container);
 
             services.AddRazorPages();
+
+            services.AddAuthentication()
+                .AddJwtBearer(JwtScheme, options => {
+                    var key = Configuration.GetValue<string>("JwtTokenLogin:Secret");
+                    options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+                    {
+                        IssuerSigningKey = JwtSecurityKey.Create(key),
+                        ValidateActor = false,
+                        ValidateIssuer = false,
+                        ValidateAudience = false,
+                        ValidateLifetime = false,
+                        ValidateIssuerSigningKey = true,
+                        ValidateTokenReplay = false
+                    };
+
+                    options.Events = new Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerEvents
+                    {
+                        OnAuthenticationFailed = context =>
+                        {
+                            return Task.CompletedTask;
+                        },
+                        OnTokenValidated = context =>
+                        {
+                            return Task.CompletedTask;
+                        },
+                        OnMessageReceived = context =>
+                        {
+                            return Task.CompletedTask;
+                        }
+
+                    };
+
+                });
+
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy(AuthPolicy,
+                    new AuthorizationPolicyBuilder()
+                    .RequireAuthenticatedUser()
+                    .AddAuthenticationSchemes(JwtScheme)
+                    .Build());
+            });
+
             services.AddLogging();
 
             services.AddCors(options =>
@@ -104,9 +162,7 @@ namespace Core.Identity
                 app.UseHsts();
             }
 
-            app.UseHttpsRedirection();
             app.UseStaticFiles();
-
             app.UseRouting();
             app.UseCors(AllowAll);
 

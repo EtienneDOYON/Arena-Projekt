@@ -23,17 +23,15 @@ namespace Core.Identity.Controllers
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
         private readonly IApplicationUserService applicationUserService;
-        private readonly AuthenticatorTokenProvider<ApplicationUser> authenticatorTokenProvider;
         private readonly IConfiguration configuration;
 
         public UserController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager,
-            IApplicationUserService applicationUserService, AuthenticatorTokenProvider<ApplicationUser> authenticatorTokenProvider,
+            IApplicationUserService applicationUserService,
             IConfiguration configuration)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
             this.applicationUserService = applicationUserService;
-            this.authenticatorTokenProvider = authenticatorTokenProvider;
             this.configuration = configuration;
         }
 

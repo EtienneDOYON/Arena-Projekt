@@ -24,21 +24,20 @@ namespace Core.Identity.Controllers
         private readonly UserManager<ApplicationUser> userManager;
         private readonly SignInManager<ApplicationUser> signInManager;
         private readonly IApplicationUserService applicationUserService;
-        private readonly AuthenticatorTokenProvider<ApplicationUser> authenticatorTokenProvider;
         private readonly IConfiguration configuration;
 
         public WarriorController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager,
-            IApplicationUserService applicationUserService, AuthenticatorTokenProvider<ApplicationUser> authenticatorTokenProvider,
+            IApplicationUserService applicationUserService,
             IConfiguration configuration)
         {
             this.userManager = userManager;
             this.signInManager = signInManager;
             this.applicationUserService = applicationUserService;
-            this.authenticatorTokenProvider = authenticatorTokenProvider;
             this.configuration = configuration;
         }
 
         [HttpGet]
+        [Authorize("GodsGame")]
         public async Task<ActionResult> GetAllWarriors()
         {
             var test = HttpContext.GetClaim("User_Id");
