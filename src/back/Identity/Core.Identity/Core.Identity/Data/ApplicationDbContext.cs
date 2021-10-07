@@ -18,6 +18,13 @@ namespace Core.Identity.Data
         protected readonly IHttpContextAccessor _contextAccessor;
         static string DbConnectionString { get; set; }
 
+
+        public DbSet<Warrior> Warriors { get; set; }
+        public DbSet<Class> Classes { get; set; }
+        public DbSet<Subclass> Subclasses { get; set; }
+
+
+
         public ApplicationDbContext()
         { }
 

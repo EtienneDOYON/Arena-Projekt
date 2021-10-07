@@ -1,4 +1,5 @@
 ﻿using Core.Identity.Models.Models;
+using Core.Identity.Services.Classes;
 using Core.Services.Interfaces;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;

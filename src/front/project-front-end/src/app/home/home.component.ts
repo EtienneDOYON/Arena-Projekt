@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserFactory } from '../factories/user.factory';
 import { WarriorFactory } from '../factories/warrior.factory';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -15,7 +16,8 @@ export class HomeComponent implements OnInit {
   LogInFailure = false;
   LogInSuccess = false;
 
-  constructor(private userFactory: UserFactory, private warriorFactory: WarriorFactory) {
+  constructor(private userFactory: UserFactory, private warriorFactory: WarriorFactory, private route: Router) {
+    localStorage.removeItem("UserToken");
   }
 
   ngOnInit(): void {
@@ -32,10 +34,8 @@ export class HomeComponent implements OnInit {
       this.LogInFailure = true;
       this.LogInSuccess = false;
     } else {
-      this.LogInFailure = false;
-      this.LogInSuccess = true;
-
       localStorage.setItem("UserToken", connectionResult.access_token);
+      this.route.navigate(['/team_warriors']);
     }
   }
 

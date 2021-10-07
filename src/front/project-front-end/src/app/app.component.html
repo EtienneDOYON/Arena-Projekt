@@ -4,6 +4,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/3/w3.css">
 <body>
+    <!-- IF THE USER IS CONNECTED -->
+    <div *ngIf="isUserConnected">
+        <button class="logout-button" (click)="LogOut()">{{ 'Global.LogOut' | translate }}</button>
+    </div>
+
+    <!-- IF THE USER IS NOT CONNECTED -->
+    <div *ngIf="!isUserConnected">
+
+    </div>
+
     <router-outlet></router-outlet>
 </body>
 </html>

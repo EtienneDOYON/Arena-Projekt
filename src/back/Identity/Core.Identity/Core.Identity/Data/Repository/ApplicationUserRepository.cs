@@ -12,8 +12,8 @@ namespace Core.Identity.Data.Repository
     public class ApplicationUserRepository : IApplicationUserRepository
     {
         protected DbSet<ApplicationUser> DbSet => Context?.Set<ApplicationUser>();
-
         protected ApplicationDbContext Context => new ApplicationDbContext();
+
 
         [InjectionMethod]
         public void Initialize()

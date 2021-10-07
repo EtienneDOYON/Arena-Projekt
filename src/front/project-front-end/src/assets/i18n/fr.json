@@ -1,13 +1,14 @@
 {
     "Home": {
-        "Title": "Battle Arenas 2, j'imagine ?",
+        "Title": "God's Game - Le jeu des dieux",
         "Username": "Nom d'utilisateur",
         "Password": "Mot de passe",
         "OnConnectionSuccess1": "Bienvenue ",
         "OnConnectionSuccess2": ", merci de patienter"
     },
     "Global": {
-        "Error": "Une erreur est survenue"
+        "Error": "Une erreur est survenue",
+        "LogOut": "Se déconnecter"
     },
     "Error": {
         "InvalidUsernameOrPassword": "Identifiant ou mot de passe incorrect",

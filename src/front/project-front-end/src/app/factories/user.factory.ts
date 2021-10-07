@@ -4,6 +4,7 @@ import { environment } from "src/environments/environment";
 import { ToastrService } from 'ngx-toastr';
 import { TranslateService } from '@ngx-translate/core';
 import { TokenFactory } from './token.factory'
+import { Router } from '@angular/router';
 
 @Injectable({
     providedIn: 'root'
@@ -11,7 +12,8 @@ import { TokenFactory } from './token.factory'
 
 export class UserFactory {
 
-  constructor(private http: HttpClient, private toastr: ToastrService, private translate: TranslateService, private tokenFactory: TokenFactory) {
+  constructor(private http: HttpClient, private toastr: ToastrService, private translate: TranslateService, private tokenFactory: TokenFactory,
+    private route: Router) {
   }
 
   ngOnInit(): void {
@@ -32,6 +34,11 @@ export class UserFactory {
     } else {
       return ret;
     }
+  }
+
+  public LogOut() {
+    var auth_token = localStorage.removeItem("UserToken");
+    this.route.navigate(['/']);
   }
 
 }

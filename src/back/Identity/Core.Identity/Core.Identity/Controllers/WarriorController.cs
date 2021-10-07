@@ -40,7 +40,11 @@ namespace Core.Identity.Controllers
         [Authorize("GodsGame")]
         public async Task<ActionResult> GetAllWarriors()
         {
-            var test = HttpContext.GetClaim("User_Id");
+            var userId = applicationUserService.GetCurrentUserId(HttpContext);
+
+            if (userId == null)
+                return BadRequest("You need to be logged in to perform this action");
+
             return Ok();
         }
     }
