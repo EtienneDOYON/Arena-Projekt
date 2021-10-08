@@ -6,7 +6,17 @@
 <body>
     <!-- IF THE USER IS CONNECTED -->
     <div *ngIf="isUserConnected">
-        <button class="logout-button" (click)="LogOut()">{{ 'Global.LogOut' | translate }}</button>
+
+        <div class="flex admin-menu">
+            <li (mouseover)="displayAdminMenu=true" (mouseout)="displayAdminMenu=false">
+                {{ 'Global.Admin' | translate }}
+                <ul *ngIf="displayAdminMenu">{{ 'Global.Classes' | translate }}</ul>
+                <ul *ngIf="displayAdminMenu">{{ 'Global.Subclasses' | translate }}</ul>
+            </li>
+        </div>
+        <div class="flex justify-end">
+            <button class="logout-button" (click)="LogOut()">{{ 'Global.LogOut' | translate }}</button>    
+        </div>
     </div>
 
     <!-- IF THE USER IS NOT CONNECTED -->

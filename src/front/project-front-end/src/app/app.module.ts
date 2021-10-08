@@ -19,6 +19,8 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 
+import {MatMenuModule} from '@angular/material/menu';
+
 import { FormsModule } from '@angular/forms';
 
 import { ToastrModule } from 'ngx-toastr';
@@ -48,6 +50,7 @@ const appRoutes: Routes = [
     FormsModule,
     CommonModule,
     BrowserAnimationsModule,
+    MatMenuModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     TranslateModule.forRoot({

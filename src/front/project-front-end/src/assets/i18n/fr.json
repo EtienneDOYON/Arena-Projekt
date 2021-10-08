@@ -8,7 +8,10 @@
     },
     "Global": {
         "Error": "Une erreur est survenue",
-        "LogOut": "Se déconnecter"
+        "LogOut": "Se déconnecter",
+        "Admin": "Administrateur",
+        "Classes": "Race",
+        "Subclasses": "Culture"
     },
     "Error": {
         "InvalidUsernameOrPassword": "Identifiant ou mot de passe incorrect",

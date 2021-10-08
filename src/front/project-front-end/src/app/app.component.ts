@@ -12,6 +12,7 @@ export class AppComponent {
   title = 'God\'s Game';
 
   public isUserConnected = false;
+  public displayAdminMenu = false;
 
   constructor(private translate: TranslateService, private route: Router, private userFactory: UserFactory) {
     translate.setDefaultLang('fr');

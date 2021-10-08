@@ -111,3 +111,60 @@
 .mb-30 {
     margin-bottom: 30px !important;
 }
+
+.pull-right {
+    float: right !important;
+}
+
+.pull-left {
+    float: left !important;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+
+    &.column {
+        flex-direction: column;
+    }
+
+    &.justify-start {
+        justify-content: flex-start;
+    }
+
+    &.justify-end {
+        justify-content: flex-end;
+    }
+
+    &.justify-center {
+        justify-content: center;
+    }
+
+    &.space-between {
+        justify-content: space-between;
+    }
+
+    &.space-evenly {
+        justify-content: space-evenly;
+    }
+
+    &.align-center {
+        align-items: center;
+    }
+
+    &.align-start {
+        align-items: flex-start;
+    }
+
+    &.align-end {
+        align-items: flex-end;
+    }
+
+    &.align-stretch {
+        align-items: stretch;
+    }
+}
