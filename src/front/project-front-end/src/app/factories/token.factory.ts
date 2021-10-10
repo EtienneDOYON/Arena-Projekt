@@ -84,4 +84,72 @@ export class TokenFactory {
       return err;
     }
   }
+
+  async put(url: string, body: any) {
+
+    var auth_token = localStorage.getItem("UserToken");
+
+    if (!auth_token) {
+        this.route.navigate(['/notAllowed']);
+        return {
+            'error': 'NotAllowed'
+        };
+    }
+
+    const headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${auth_token}`    
+    })
+    
+    try {
+      const ret: any = JSON.parse(await this.http.put(url, body, {responseType: 'text', headers: headers}).toPromise());
+      return ret;
+    } catch (err: any) {
+      return err;
+    }
+  }
+
+  async putWithoutToken(url: string, body: any) {
+    
+    try {
+      const ret: any = JSON.parse(await this.http.put(url, body, {responseType: 'text'}).toPromise());
+      return ret;
+    } catch (err: any) {
+      return err;
+    }
+  }
+
+  async delete(url: string) {
+
+    var auth_token = localStorage.getItem("UserToken");
+
+    if (!auth_token) {
+        this.route.navigate(['/notAllowed']);
+        return {
+            'error': 'NotAllowed'
+        };
+    }
+
+    const headers = new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${auth_token}`    
+    })
+    
+    try {
+      const ret: any = JSON.parse(await this.http.delete(url, {responseType: 'text', headers: headers}).toPromise());
+      return ret;
+    } catch (err: any) {
+      return err;
+    }
+  }
+
+  async deleteWithoutToken(url: string) {
+    
+    try {
+      const ret: any = JSON.parse(await this.http.delete(url, {responseType: 'text'}).toPromise());
+      return ret;
+    } catch (err: any) {
+      return err;
+    }
+  }
 }

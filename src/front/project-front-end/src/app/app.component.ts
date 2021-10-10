@@ -15,7 +15,12 @@ export class AppComponent {
   public displayAdminMenu = false;
 
   constructor(private translate: TranslateService, private route: Router, private userFactory: UserFactory) {
-    translate.setDefaultLang('fr');
+    var language = localStorage.getItem("Language");
+    if (!language) {
+      this.translate.setDefaultLang('fr');
+    } else {
+      this.translate.setDefaultLang(language);
+    }
 
     route.events.subscribe((val) => {
       var auth_token = localStorage.getItem("UserToken");

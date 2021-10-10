@@ -7,5 +7,6 @@ namespace Core.Identity.Models.Models
 {
     public class Class : Entity<int>
     {
+        public string Name { get; set; }
     }
 }

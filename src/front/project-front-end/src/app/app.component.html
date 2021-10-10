@@ -7,15 +7,17 @@
     <!-- IF THE USER IS CONNECTED -->
     <div *ngIf="isUserConnected">
 
-        <div class="flex admin-menu">
-            <li (mouseover)="displayAdminMenu=true" (mouseout)="displayAdminMenu=false">
-                {{ 'Global.Admin' | translate }}
-                <ul *ngIf="displayAdminMenu">{{ 'Global.Classes' | translate }}</ul>
-                <ul *ngIf="displayAdminMenu">{{ 'Global.Subclasses' | translate }}</ul>
-            </li>
+        <div class="dropdown mt-10">
+            <button class="dropbtn mr-10">{{ 'Global.Admin' | translate }}</button>
+            <div class="dropdown-content">
+              <a href="#">{{ 'Global.Classes' | translate }}</a>
+              <a href="#">{{ 'Global.Subclasses' | translate }}</a>
+            </div>
         </div>
-        <div class="flex justify-end">
-            <button class="logout-button" (click)="LogOut()">{{ 'Global.LogOut' | translate }}</button>    
+        <button class="logout-button mr-10" (click)="LogOut()">{{ 'Global.LogOut' | translate }}</button>    
+
+        <div id="Filler" style="height: 1920px; width: 1080px;">
+
         </div>
     </div>
 

@@ -9,9 +9,6 @@ import { WarriorFactory } from '../../factories/warrior.factory';
 })
 export class TeamWarriors implements OnInit {
 
-  user_name = "";
-  user_pwd = "";
-
   constructor(private userFactory: UserFactory, private warriorFactory: WarriorFactory) {
     this.warriorFactory.GetAllWarriors().then((ret) => {
       console.log(ret);

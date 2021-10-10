@@ -3,6 +3,8 @@ using Core.Identity.Data;
 using Core.Identity.Data.Repository;
 using Core.Identity.Helpers;
 using Core.Identity.Models.Models;
+using Core.Identity.Services.Classes;
+using Core.Identity.Services.Interfaces;
 using Core.Services.Classes;
 using Core.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
@@ -181,8 +183,12 @@ namespace Core.Identity
         private void InjectDependencies(IServiceCollection services, IUnityContainer container)
         {
             RegisterType<IApplicationUserRepository, ApplicationUserRepository>(services, container);
+            RegisterType<IClassRepository, ClassRepository>(services, container);
+            RegisterType<ISubclassRepository, SubclassRepository>(services, container);
 
             RegisterType<IApplicationUserService, ApplicationUserService>(services, container);
+            RegisterType<IClassService, ClassService>(services, container);
+            RegisterType<ISubclassService, SubclassService>(services, container);
         }
 
         private void RegisterType<T1, T2>(IServiceCollection services, IUnityContainer container)

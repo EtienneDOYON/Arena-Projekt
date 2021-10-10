@@ -97,6 +97,9 @@ namespace Core.Identity.Data.Migrations
                     b.Property<int>("EntityState")
                         .HasColumnType("int");
 
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Classes");
@@ -109,10 +112,18 @@ namespace Core.Identity.Data.Migrations
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int>("Class_Id")
+                        .HasColumnType("int");
+
                     b.Property<int>("EntityState")
                         .HasColumnType("int");
 
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("Class_Id");
 
                     b.ToTable("Subclasses");
                 });
@@ -146,9 +157,15 @@ namespace Core.Identity.Data.Migrations
                         .HasColumnType("bigint");
 
                     b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("Class_Id");
+
+                    b.HasIndex("Subclass_Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Warriors");
                 });
@@ -301,6 +318,42 @@ namespace Core.Identity.Data.Migrations
                     b.HasKey("UserId", "LoginProvider", "Name");
 
                     b.ToTable("AspNetUserTokens");
+                });
+
+            modelBuilder.Entity("Core.Identity.Models.Models.Subclass", b =>
+                {
+                    b.HasOne("Core.Identity.Models.Models.Class", "Class")
+                        .WithMany()
+                        .HasForeignKey("Class_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Class");
+                });
+
+            modelBuilder.Entity("Core.Identity.Models.Models.Warrior", b =>
+                {
+                    b.HasOne("Core.Identity.Models.Models.Class", "Class")
+                        .WithMany()
+                        .HasForeignKey("Class_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Core.Identity.Models.Models.Subclass", "Subclass")
+                        .WithMany()
+                        .HasForeignKey("Subclass_Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Core.Identity.Models.Models.ApplicationUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("Class");
+
+                    b.Navigation("Subclass");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
