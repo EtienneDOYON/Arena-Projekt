@@ -20,20 +20,21 @@ namespace Core.Identity.Services.Classes
             this.subclassRepository = subclassRepository;
         }
 
-        public bool CreateClass(SubclassViewModel classViewModel)
+        public bool CreateClass(ClassViewModel classViewModel)
         {
             var _class = classRepository.GetClassByName(classViewModel.Name);
             if (_class != null)
                 return false;
 
+            _class = new Class();
             _class.Name = classViewModel.Name;
 
-            classRepository.Update(_class);
+            classRepository.Insert(_class);
             classRepository.SaveChanges();
             return true;
         }
 
-        public bool UpdateClass(SubclassViewModel classViewModel)
+        public bool UpdateClass(ClassViewModel classViewModel)
         {
             var _class = classRepository.GetClassById(classViewModel.Id);
             if (_class == null)
@@ -43,6 +44,7 @@ namespace Core.Identity.Services.Classes
             if (classWithName != null && classWithName.Id != classViewModel.Id)
                 return false;
 
+            _class = new Class();
             _class.Name = classViewModel.Name;
 
             classRepository.Update(_class);

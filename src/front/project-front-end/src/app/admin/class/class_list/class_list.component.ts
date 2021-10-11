@@ -1,16 +1,17 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ClassFactory } from '../../../factories/class.factory';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './team-warriors.component.html',
-  styleUrls: ['./team-warriors.component.scss']
+  templateUrl: './class_list.component.html',
+  styleUrls: ['./class_list.component.scss']
 })
 export class ClassList implements OnInit {
 
   public classes: any;
 
-  constructor(private classFactory: ClassFactory) {
+  constructor(private classFactory: ClassFactory, private route: Router) {
     classFactory.GetAllClasses().then((classes) => {
       this.classes = classes;
     })
@@ -19,7 +20,9 @@ export class ClassList implements OnInit {
   ngOnInit(): void {
   }
 
-  public async CheckToken() {
+  public async CreateNewClass() {
+    // TODO : Check if user is admin
+    this.route.navigate(['/class_add']);
   }
 
 }

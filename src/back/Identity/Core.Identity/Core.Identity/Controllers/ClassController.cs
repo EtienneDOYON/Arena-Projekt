@@ -58,7 +58,7 @@ namespace Core.Identity.Controllers
 
         [HttpPost]
         [Authorize("GodsGame")]
-        public async Task<ActionResult> CreateClass([FromBody] SubclassViewModel classViewModel)
+        public async Task<ActionResult> CreateClass([FromBody] ClassViewModel classViewModel)
         {
             var userId = applicationUserService.GetCurrentUserId(HttpContext);
 
@@ -76,7 +76,7 @@ namespace Core.Identity.Controllers
 
         [HttpPut]
         [Authorize("GodsGame")]
-        public async Task<ActionResult> UpdateClass([FromBody] SubclassViewModel classViewModel)
+        public async Task<ActionResult> UpdateClass([FromBody] ClassViewModel classViewModel)
         {
             var userId = applicationUserService.GetCurrentUserId(HttpContext);
 

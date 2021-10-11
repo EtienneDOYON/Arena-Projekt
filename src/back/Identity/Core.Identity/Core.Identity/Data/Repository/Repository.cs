@@ -14,13 +14,13 @@ namespace Core.Identity.Data
     public class Repository<TEntity, TId> : IRepository<TEntity, TId>
         where TEntity : Entity<TId>
     {
-        protected ApplicationDbContext Context;
+        protected ApplicationDbContext Context => new ApplicationDbContext();
         protected DbSet<TEntity> DbSet => Context?.Set<TEntity>();
 
         [InjectionMethod]
         public void Initialize(ApplicationDbContext coreContext)
         {
-            Context = coreContext;
+//            Context = coreContext;
         }
 
         public virtual TEntity FindById(TId id)

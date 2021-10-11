@@ -4,7 +4,8 @@
         "Username": "Nom d'utilisateur",
         "Password": "Mot de passe",
         "OnConnectionSuccess1": "Bienvenue ",
-        "OnConnectionSuccess2": ", merci de patienter"
+        "OnConnectionSuccess2": ", merci de patienter",
+        "Connect": "Se connecter"
     },
     "Global": {
         "Error": "Une erreur est survenue",
@@ -12,6 +13,12 @@
         "Admin": "Administrateur",
         "Classes": "Race",
         "Subclasses": "Culture"
+    },
+    "Class": {
+        "AddClass": "Créer une nouvelle classe",
+        "CreateClassTitle": "Création de classe",
+        "CreateClassSave": "Sauvegarder la classe",
+        "Name": "Nom"
     },
     "Error": {
         "InvalidUsernameOrPassword": "Identifiant ou mot de passe incorrect",

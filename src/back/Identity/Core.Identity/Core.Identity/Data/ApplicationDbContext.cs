@@ -74,16 +74,11 @@ namespace Core.Identity.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                Console.Error.WriteLine("ERR - DbContext is not configured. Configuring...");
                 var connString = DbConnectionString;
                 optionsBuilder
                     //                    .UseLoggerFactory(MyConsoleLoggerFactory)
                     .EnableSensitiveDataLogging(false)
                     .UseSqlServer(connString, options => options.MaxBatchSize(150));
-            }
-            else
-            {
-                Console.Out.WriteLine("DbContext correctly configured.");
             }
         }
 

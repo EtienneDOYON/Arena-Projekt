@@ -6,5 +6,5 @@
     <input type="text" id="username" name="username" required size="10" [(ngModel)]="user_name">
     <label>{{ 'Home.Password' | translate }}</label>
     <input type="text" id="password" name="password" type="password" size="10" [(ngModel)]="user_pwd">
-    <button class="ml-10 connect-button" (click)="ConnectUser()">CONNECT</button>
+    <button class="ml-10 connect-button" (click)="ConnectUser()">{{ 'Home.Connect' | translate}}</button>
 </div>

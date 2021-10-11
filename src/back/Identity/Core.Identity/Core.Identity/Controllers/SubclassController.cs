@@ -36,7 +36,7 @@ namespace Core.Identity.Controllers
 
         [HttpGet]
         [Authorize("GodsGame")]
-        public async Task<ActionResult<List<Class>>> GetAllSubclasses()
+        public async Task<ActionResult<List<Subclass>>> GetAllSubclasses()
         {
             var userId = applicationUserService.GetCurrentUserId(HttpContext);
 
@@ -48,7 +48,7 @@ namespace Core.Identity.Controllers
 
         [HttpGet("GetAllSubclassesOfClass/{id}")]
         [Authorize("GodsGame")]
-        public async Task<ActionResult<List<Class>>> GetAllSubclassesOfClass([FromRoute] int id)
+        public async Task<ActionResult<List<Subclass>>> GetAllSubclassesOfClass([FromRoute] int id)
         {
             var userId = applicationUserService.GetCurrentUserId(HttpContext);
 
@@ -60,7 +60,7 @@ namespace Core.Identity.Controllers
 
         [HttpGet("/{id}")]
         [Authorize("GodsGame")]
-        public async Task<ActionResult<Class>> GetClass([FromRoute] int id)
+        public async Task<ActionResult<Subclass>> GetClass([FromRoute] int id)
         {
             var userId = applicationUserService.GetCurrentUserId(HttpContext);
 

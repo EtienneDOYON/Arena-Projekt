@@ -35,4 +35,9 @@ export class AppComponent {
     this.isUserConnected = false;
     this.userFactory.LogOut();
   }
+
+  public GoToClassList() {
+    // TODO : Check la permission Admin.
+    this.route.navigate(['/class_list']);
+  }
 }

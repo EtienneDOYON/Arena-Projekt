@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
+import { ClassList } from './admin/class/class_list/class_list.component';
 import { UsersComponent } from './users/users.component';
 
 import {Routes} from '@angular/router';
@@ -24,6 +25,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { FormsModule } from '@angular/forms';
 
 import { ToastrModule } from 'ngx-toastr';
+import { ClassAdd } from './admin/class/class_add/class_add.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -31,6 +33,9 @@ const appRoutes: Routes = [
   {path: 'notFound', component: NotFoundComponent},
   {path: 'notAllowed', component: NotAllowedComponent},
   {path: 'team_warriors', component: TeamWarriors},
+
+  {path: 'class_list', component: ClassList},
+  {path: 'class_add', component: ClassAdd},
 
   {path: '**', redirectTo: '/notFound', pathMatch: 'full'}
 ];
@@ -41,7 +46,10 @@ const appRoutes: Routes = [
     HomeComponent,
     UsersComponent,
     NotFoundComponent,
-    NotAllowedComponent
+    NotAllowedComponent,
+    TeamWarriors,
+    ClassList,
+    ClassAdd
   ],
   imports: [
     BrowserModule,

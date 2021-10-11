@@ -7,18 +7,14 @@
     <!-- IF THE USER IS CONNECTED -->
     <div *ngIf="isUserConnected">
 
-        <div class="dropdown mt-10">
+        <div class="dropdown mt-10 mb-10">
             <button class="dropbtn mr-10">{{ 'Global.Admin' | translate }}</button>
             <div class="dropdown-content">
-              <a href="#">{{ 'Global.Classes' | translate }}</a>
+              <a (click)="GoToClassList()">{{ 'Global.Classes' | translate }}</a>
               <a href="#">{{ 'Global.Subclasses' | translate }}</a>
             </div>
         </div>
-        <button class="logout-button mr-10" (click)="LogOut()">{{ 'Global.LogOut' | translate }}</button>    
-
-        <div id="Filler" style="height: 1920px; width: 1080px;">
-
-        </div>
+        <button class="logout-button mr-10" (click)="LogOut()">{{ 'Global.LogOut' | translate }}</button>
     </div>
 
     <!-- IF THE USER IS NOT CONNECTED -->
