@@ -14,13 +14,23 @@ namespace Core.Identity.Data
     public class Repository<TEntity, TId> : IRepository<TEntity, TId>
         where TEntity : Entity<TId>
     {
-        protected ApplicationDbContext Context => new ApplicationDbContext();
+        protected ApplicationDbContext Context;
         protected DbSet<TEntity> DbSet => Context?.Set<TEntity>();
+
+        public Repository()
+        {
+            Context = new ApplicationDbContext();
+        }
+
+        public Repository(ApplicationDbContext dbContext)
+        {
+            Context = dbContext;
+        }
 
         [InjectionMethod]
         public void Initialize(ApplicationDbContext coreContext)
         {
-//            Context = coreContext;
+            Context = coreContext;
         }
 
         public virtual TEntity FindById(TId id)
@@ -31,6 +41,11 @@ namespace Core.Identity.Data
         public virtual TEntity Insert(TEntity entity)
         {
             return this.DbSet.Add(entity).Entity;
+        }
+
+        public virtual void Attach(TEntity entity)
+        {
+            this.DbSet.Attach(entity);
         }
 
         public virtual void InsertRange(IEnumerable<TEntity> entities)

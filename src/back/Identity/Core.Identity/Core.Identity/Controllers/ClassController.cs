@@ -66,6 +66,9 @@ namespace Core.Identity.Controllers
             if (userId == null)
                 return BadRequest("You need to be logged in to perform this action");
 
+            if (classViewModel.Name == null)
+                return BadRequest("No name specified");
+
             var ret = classService.CreateClass(classViewModel);
 
             if (!ret)

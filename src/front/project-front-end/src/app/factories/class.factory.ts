@@ -45,7 +45,7 @@ export class ClassFactory {
   {
     let url = environment.baseCoreUrl + 'class';
 
-    const ret: any = await this.tokenFactory.put(url, {classViewModel: _class});
+    const ret: any = await this.tokenFactory.put(url, _class);
     if (ret.error) {
       this.toastr.warning(this.translate.instant("Error." + ret.error), "");
     } else {
@@ -57,7 +57,7 @@ export class ClassFactory {
   {
     let url = environment.baseCoreUrl + 'class';
 
-    const ret: any = await this.tokenFactory.post(url, {classViewModel: _class});
+    const ret: any = await this.tokenFactory.post(url, _class);
     if (ret.error) {
       this.toastr.warning(this.translate.instant("Error." + ret.error), "");
     } else {

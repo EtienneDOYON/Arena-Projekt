@@ -13,6 +13,8 @@ namespace Core.Identity.Data
 
         TEntity Insert(TEntity entity);
 
+        void Attach(TEntity entity);
+
         void InsertRange(IEnumerable<TEntity> entities);
 
         void InsertGraphRange(IEnumerable<TEntity> entities);
