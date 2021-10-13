@@ -58,7 +58,7 @@ namespace Core.Identity.Controllers
             return Ok(subclassService.GetAllSubclassesOfClass(id));
         }
 
-        [HttpGet("/{id}")]
+        [HttpGet("{id}")]
         [Authorize("GodsGame")]
         public async Task<ActionResult<Subclass>> GetClass([FromRoute] int id)
         {
@@ -106,9 +106,9 @@ namespace Core.Identity.Controllers
             return Ok();
         }
 
-        [HttpDelete("/{id}")]
+        [HttpDelete("{id}")]
         [Authorize("GodsGame")]
-        public async Task<ActionResult> DeleteClass([FromRoute] int subclassId)
+        public async Task<ActionResult> DeleteClass([FromRoute] int id)
         {
             var userId = applicationUserService.GetCurrentUserId(HttpContext);
 
@@ -116,7 +116,7 @@ namespace Core.Identity.Controllers
             if (userId == null)
                 return BadRequest("You need to be logged in to perform this action");
 
-            var ret = subclassService.DeleteSubclass(subclassId);
+            var ret = subclassService.DeleteSubclass(id);
 
             if (!ret)
                 return BadRequest("Cannot delete a class with subclasses. Please delete the subclasses first.");

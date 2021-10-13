@@ -20,7 +20,7 @@ namespace Core.Identity.Data.Repository
 
         public Subclass GetSubclassByName(string name)
         {
-            return DbSet.FirstOrDefault(x => x.Name == name);
+            return DbSet.FirstOrDefault(x => x.Name == name && x.EntityState == Models.Enum.State.Active);
         }
 
         public Subclass GetSubclassByWarrior(Warrior warrior)

@@ -16,8 +16,12 @@
     },
     "Class": {
         "AddClass": "Créer une nouvelle classe",
+        "EditClass": "Modifier",
+        "DeleteClass": "Supprimer",
         "CreateClassTitle": "Création de classe",
         "CreateClassSave": "Sauvegarder la classe",
+        "EditClassTitle": "Edition de classe",
+        "EditClassSave": "Sauvegarder la classe",
         "Name": "Nom"
     },
     "Error": {

@@ -28,7 +28,7 @@ namespace Core.Identity.Data.Repository
 
         public Class GetClassByName(string name)
         {
-            return DbSet.FirstOrDefault(x => x.Name == name);
+            return DbSet.FirstOrDefault(x => x.Name == name && x.EntityState == Models.Enum.State.Active);
         }
 
         public List<Class> GetAllClasses()

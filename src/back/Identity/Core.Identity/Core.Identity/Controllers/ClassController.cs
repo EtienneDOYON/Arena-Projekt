@@ -44,7 +44,7 @@ namespace Core.Identity.Controllers
             return Ok(classService.GetAllClasses());
         }
 
-        [HttpGet("/{id}")]
+        [HttpGet("{id}")]
         [Authorize("GodsGame")]
         public async Task<ActionResult<Class>> GetClass([FromRoute] int id)
         {
@@ -95,7 +95,7 @@ namespace Core.Identity.Controllers
             return Ok();
         }
 
-        [HttpDelete("/{id}")]
+        [HttpDelete("{classId}")]
         [Authorize("GodsGame")]
         public async Task<ActionResult> DeleteClass([FromRoute] int classId)
         {

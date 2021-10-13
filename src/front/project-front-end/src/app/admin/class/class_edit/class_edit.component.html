@@ -1,0 +1,10 @@
+<div id="title-field" class="mb-20">
+    <label class="page-title">{{ 'Class.EditClassTitle' | translate}}</label>
+</div>
+<div id="connexion-field" class="connexion-field mb-20">
+    <label>{{ 'Class.Name' | translate }}</label>
+    <input type="text" id="className" name="className" required size="10" [(ngModel)]="_class.name" class="ml-10">
+</div>
+<div>
+    <button class="ml-10 connect-button" (click)="SaveClass()">{{ 'Class.EditClassSave' | translate }}</button>
+</div>

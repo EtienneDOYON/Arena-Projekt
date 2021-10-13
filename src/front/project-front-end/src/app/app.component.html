@@ -11,7 +11,7 @@
             <button class="dropbtn mr-10">{{ 'Global.Admin' | translate }}</button>
             <div class="dropdown-content">
               <a (click)="GoToClassList()">{{ 'Global.Classes' | translate }}</a>
-              <a href="#">{{ 'Global.Subclasses' | translate }}</a>
+              <a (click)="GoToSubclassList()">{{ 'Global.Subclasses' | translate }}</a>
             </div>
         </div>
         <button class="logout-button mr-10" (click)="LogOut()">{{ 'Global.LogOut' | translate }}</button>

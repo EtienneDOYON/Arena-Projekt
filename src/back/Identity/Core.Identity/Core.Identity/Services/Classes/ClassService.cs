@@ -44,7 +44,6 @@ namespace Core.Identity.Services.Classes
             if (classWithName != null && classWithName.Id != classViewModel.Id)
                 return false;
 
-            _class = new Class();
             _class.Name = classViewModel.Name;
 
             classRepository.Update(_class);

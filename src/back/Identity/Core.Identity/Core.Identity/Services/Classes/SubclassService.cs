@@ -53,7 +53,6 @@ namespace Core.Identity.Services.Classes
             if (_class == null)
                 return false;
 
-            subclass = new Subclass();
             _subclass.Name = subclassViewModel.Name;
             _subclass.Class_Id = subclassViewModel.ClassId;
 

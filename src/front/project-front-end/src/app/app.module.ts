@@ -6,10 +6,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
-import { ClassList } from './admin/class/class_list/class_list.component';
 import { UsersComponent } from './users/users.component';
 
-import {Routes} from '@angular/router';
+import { Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NotAllowedComponent } from './not-allowed/not-allowed.component';
 import { TeamWarriors } from './team/team_warriors/team-warriors.component';
@@ -25,7 +24,13 @@ import {MatMenuModule} from '@angular/material/menu';
 import { FormsModule } from '@angular/forms';
 
 import { ToastrModule } from 'ngx-toastr';
+import { MatTableModule } from '@angular/material/table'  
+
+import { ClassList } from './admin/class/class_list/class_list.component';
 import { ClassAdd } from './admin/class/class_add/class_add.component';
+import { ClassEdit } from './admin/class/class_edit/class_edit.component';
+
+import { SubclassList } from './admin/subclass/subclass_list/subclass_list.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -36,6 +41,9 @@ const appRoutes: Routes = [
 
   {path: 'class_list', component: ClassList},
   {path: 'class_add', component: ClassAdd},
+  {path: 'class_edit/:id', component: ClassEdit},
+
+  {path: 'subclass_list', component: SubclassList},
 
   {path: '**', redirectTo: '/notFound', pathMatch: 'full'}
 ];
@@ -47,9 +55,14 @@ const appRoutes: Routes = [
     UsersComponent,
     NotFoundComponent,
     NotAllowedComponent,
+
     TeamWarriors,
+
     ClassList,
-    ClassAdd
+    ClassAdd,
+    ClassEdit,
+
+    SubclassList
   ],
   imports: [
     BrowserModule,
@@ -59,6 +72,7 @@ const appRoutes: Routes = [
     CommonModule,
     BrowserAnimationsModule,
     MatMenuModule,
+    MatTableModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     TranslateModule.forRoot({

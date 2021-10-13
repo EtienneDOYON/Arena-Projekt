@@ -25,7 +25,7 @@ export class ClassAdd implements OnInit {
     if (this.class_name == "")
       return;
 
-    var ret = this.classFactory.CreateClass({
+    var ret = await this.classFactory.CreateClass({
       Id: 0,
       Name: this.class_name
     });
