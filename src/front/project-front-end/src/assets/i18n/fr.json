@@ -11,8 +11,8 @@
         "Error": "Une erreur est survenue",
         "LogOut": "Se déconnecter",
         "Admin": "Administrateur",
-        "Classes": "Race",
-        "Subclasses": "Culture"
+        "Classes": "Classe",
+        "Subclasses": "Spécialisation"
     },
     "Class": {
         "AddClass": "Créer une nouvelle classe",
@@ -23,6 +23,17 @@
         "EditClassTitle": "Edition de classe",
         "EditClassSave": "Sauvegarder la classe",
         "Name": "Nom"
+    },
+    "Subclass": {
+        "AddSubclass": "Créer une nouvelle spécialisation",
+        "EditSubclass": "Modifier",
+        "DeleteSubclass": "Supprimer",
+        "CreateSubclassTitle": "Création de spécialisation",
+        "CreateSubclassSave": "Sauvegarder la spécialisation",
+        "EditSubclassTitle": "Edition de spécialisation",
+        "EditSubclassSave": "Sauvegarder la spécialisation",
+        "Name": "Nom",
+        "ParentClass": "Classe"
     },
     "Error": {
         "InvalidUsernameOrPassword": "Identifiant ou mot de passe incorrect",

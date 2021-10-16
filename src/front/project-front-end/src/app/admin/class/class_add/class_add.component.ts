@@ -9,13 +9,9 @@ import { ClassFactory } from '../../../factories/class.factory';
 })
 export class ClassAdd implements OnInit {
 
-  classes: any;
   class_name = "";
 
   constructor(private classFactory: ClassFactory, private route: Router) {
-    classFactory.GetAllClasses().then((classes) => {
-      this.classes = classes;
-    })
   }
 
   ngOnInit(): void {

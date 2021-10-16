@@ -47,7 +47,7 @@ export class SubclassFactory {
   {
     let url = environment.baseCoreUrl + `${this.subclassRoute}`;
 
-    const ret: any = await this.tokenFactory.put(url, {subclassViewModel: _subclass});
+    const ret: any = await this.tokenFactory.put(url, _subclass);
     if (ret.error) {
       this.toastr.warning(this.translate.instant("Error." + ret.error), "");
     } else {
@@ -59,7 +59,7 @@ export class SubclassFactory {
   {
     let url = environment.baseCoreUrl + `${this.subclassRoute}`;
 
-    const ret: any = await this.tokenFactory.post(url, {subclassViewModel: _subclass});
+    const ret: any = await this.tokenFactory.post(url, _subclass);
     if (ret.error) {
       this.toastr.warning(this.translate.instant("Error." + ret.error), "");
     } else {

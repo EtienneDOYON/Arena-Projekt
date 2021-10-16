@@ -24,13 +24,16 @@ import {MatMenuModule} from '@angular/material/menu';
 import { FormsModule } from '@angular/forms';
 
 import { ToastrModule } from 'ngx-toastr';
-import { MatTableModule } from '@angular/material/table'  
+import { MatTableModule } from '@angular/material/table'
 
 import { ClassList } from './admin/class/class_list/class_list.component';
 import { ClassAdd } from './admin/class/class_add/class_add.component';
 import { ClassEdit } from './admin/class/class_edit/class_edit.component';
 
 import { SubclassList } from './admin/subclass/subclass_list/subclass_list.component';
+import { SubclassAdd } from './admin/subclass/subclass_add/subclass_add.component';
+import { MatSelectModule } from '@angular/material/select';
+import { SubclassEdit } from './admin/subclass/subclass_edit/subclass_edit.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
@@ -44,6 +47,8 @@ const appRoutes: Routes = [
   {path: 'class_edit/:id', component: ClassEdit},
 
   {path: 'subclass_list', component: SubclassList},
+  {path: 'subclass_add', component: SubclassAdd},
+  {path: 'subclass_edit/:id', component: SubclassEdit},
 
   {path: '**', redirectTo: '/notFound', pathMatch: 'full'}
 ];
@@ -62,7 +67,9 @@ const appRoutes: Routes = [
     ClassAdd,
     ClassEdit,
 
-    SubclassList
+    SubclassList,
+    SubclassAdd,
+    SubclassEdit
   ],
   imports: [
     BrowserModule,
@@ -73,6 +80,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     MatMenuModule,
     MatTableModule,
+    MatSelectModule,
     ToastrModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     TranslateModule.forRoot({

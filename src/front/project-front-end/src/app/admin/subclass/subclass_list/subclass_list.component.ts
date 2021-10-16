@@ -10,14 +10,17 @@ import { ClassFactory } from '../../../factories/class.factory';
 })
 export class SubclassList implements OnInit {
 
-  public classes: any;
+  public classNames: Array<string> = new Array();
   public subclasses: any;
   public displayedColumns = ['name', 'className', 'edit-column'];
 
   constructor(private classFactory: ClassFactory, private subclassFactory: SubclassFactory, private route: Router) {
     classFactory.GetAllClasses().then((classes) => {
-      this.classes = classes;
+      for (var i = 0; i < classes.length; i++) {
+        this.classNames[classes[i].id] = classes[i].name;
+      }
     });
+
     subclassFactory.GetAllSubclasses().then((subclasses) => {
       this.subclasses = subclasses;
     })
@@ -26,23 +29,22 @@ export class SubclassList implements OnInit {
   ngOnInit(): void {
   }
 
-  public async CreateNewClass() {
+  public async CreateNewSubclass() {
     // TODO : Check if user is admin
     this.route.navigate(['/subclass_add']);
   }
 
-  public EditClass(_class: any) {
+  public EditSubclass(_subclass: any) {
     // TODO : Check if user is admin
-    console.log(_class.id);
-    this.route.navigate([`/subclass_edit/${_class.id}`]);
+    this.route.navigate([`/subclass_edit/${_subclass.id}`]);
   }
 
-  public DeleteClass(id: number) {
+  public DeleteSubclass(id: number) {
     // TODO : Check if user is admin
-    this.classFactory.DeleteClass(id).then(() => {
-      this.classFactory.GetAllClasses().then((classes) => {
-        this.classes = classes;
-      });
+    this.subclassFactory.DeleteSubclass(id).then(() => {
+      this.subclassFactory.GetAllSubclasses().then((subclasses) => {
+        this.subclasses = subclasses;
+      })
     });
   }
 

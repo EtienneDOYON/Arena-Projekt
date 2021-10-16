@@ -52,3 +52,4 @@ C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Co
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Core.Identity.Models\bin\Debug\netcoreapp3.1\System.Security.Cryptography.Xml.dll
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Core.Identity.Models\bin\Debug\netcoreapp3.1\System.Security.Permissions.dll
 C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Core.Identity.Models\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Security.Cryptography.Pkcs.dll
+C:\Users\etien\Documents\GitHub\Arena-Projekt\src\back\Identity\Core.Identity\Core.Identity.Models\obj\Debug\netcoreapp3.1\Core.Identity.Models.csproj.AssemblyReference.cache

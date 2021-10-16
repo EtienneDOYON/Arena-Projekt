@@ -11,7 +11,6 @@ import { ClassFactory } from '../../../factories/class.factory';
 export class ClassEdit implements OnInit {
 
   _class = {name: ""};
-  class_name = "";
 
   constructor(private classFactory: ClassFactory, private route: Router, private activatedRoute: ActivatedRoute) {
     this.activatedRoute.params.subscribe( params => {

@@ -26,13 +26,13 @@ namespace Core.Identity.Services.Classes
             if (subclass != null)
                 return false;
 
-            var _class = classRepository.GetClassById(subclassViewModel.ClassId);
+            var _class = classRepository.GetClassById(subclassViewModel.Class_Id);
             if (_class == null)
                 return false;
 
             subclass = new Subclass();
             subclass.Name = subclassViewModel.Name;
-            subclass.Class_Id = subclassViewModel.ClassId;
+            subclass.Class_Id = subclassViewModel.Class_Id;
 
             subclassRepository.Insert(subclass);
             subclassRepository.SaveChanges();
@@ -46,15 +46,15 @@ namespace Core.Identity.Services.Classes
                 return false;
 
             var subclass = subclassRepository.GetSubclassByName(subclassViewModel.Name);
-            if (subclass != null)
+            if (subclass != null && subclass.Id != subclassViewModel.Id)
                 return false;
 
-            var _class = classRepository.GetClassById(subclassViewModel.ClassId);
+            var _class = classRepository.GetClassById(subclassViewModel.Class_Id);
             if (_class == null)
                 return false;
 
             _subclass.Name = subclassViewModel.Name;
-            _subclass.Class_Id = subclassViewModel.ClassId;
+            _subclass.Class_Id = subclassViewModel.Class_Id;
 
             subclassRepository.Update(_subclass);
             subclassRepository.SaveChanges();

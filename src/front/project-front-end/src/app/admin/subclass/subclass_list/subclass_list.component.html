@@ -1,20 +1,20 @@
 <table mat-table [dataSource]="subclasses" class="mat-elevation-z8 demo-table">
   
     <ng-container matColumnDef="name">
-        <th mat-header-cell *matHeaderCellDef>{{ 'Class.Name' | translate }}</th>
+        <th mat-header-cell *matHeaderCellDef>{{ 'Subclass.Name' | translate }}</th>
         <td mat-cell *matCellDef="let element">{{element.name}}</td>
     </ng-container>
 
     <ng-container matColumnDef="className">
-        <th mat-header-cell *matHeaderCellDef>{{ 'Class.Name' | translate }}</th>
-        <td mat-cell *matCellDef="let element">{{element.name}}</td>
+        <th mat-header-cell *matHeaderCellDef>{{ 'Subclass.ParentClass' | translate }}</th>
+        <td mat-cell *matCellDef="let element">{{classNames[element.class_Id]}}</td>
     </ng-container>
     
     <ng-container matColumnDef="edit-column">
         <th mat-header-cell *matHeaderCellDef></th>
         <td mat-cell *matCellDef="let element">
-            <button class="mr-10" (click)="EditClass(element)">{{ 'Class.EditClass' | translate }}</button>
-            <button (click)="DeleteClass(element.id)">{{ 'Class.DeleteClass' | translate }}</button>
+            <button class="mr-10" (click)="EditSubclass(element)">{{ 'Subclass.EditSubclass' | translate }}</button>
+            <button (click)="DeleteSubclass(element.id)">{{ 'Subclass.DeleteSubclass' | translate }}</button>
         </td>
     </ng-container>
 
@@ -25,4 +25,4 @@
     ></tr>
   </table>
 
-<button class="mt-10" (click)="CreateNewClass()">{{ 'Class.AddClass' | translate }}</button>
+<button class="mt-10" (click)="CreateNewSubclass()">{{ 'Subclass.AddSubclass' | translate }}</button>

@@ -1,0 +1,17 @@
+<div id="title-field" class="mb-20">
+    <label class="page-title">{{ 'Subclass.CreateSubclassTitle' | translate}}</label>
+</div>
+<div id="connexion-field" class="connexion-field mb-20">
+    <label>{{ 'Subclass.Name' | translate }}</label>
+    <input type="text" id="subclassName" name="subclassName" required size="10" [(ngModel)]="subclass_name" class="ml-10">
+</div>
+<div class="connexion-field mb-20">
+    <label>{{ 'Subclass.ParentClass' | translate }}</label>
+    <select name="classId" [(ngModel)]="subclassClassId" class="ml-10">
+        <option value="0"></option>
+        <option *ngFor="let class of classes" value="{{class.id}}">{{class.name}}</option>
+    </select>
+</div>
+<div>
+    <button class="ml-10 connect-button" (click)="SaveSubclass()">{{ 'Subclass.CreateSubclassSave' | translate }}</button>
+</div>
