@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Forbidden tags detection
-        if: github.event.label.name == 'DON''T MERGE' || github.event.label.name == 'Don t squash'
+        if: github.event.label.name == 'DON''T MERGE' || github.event.label.name == 'Don''t squash'
         run: | 
           echo "Don't merge / Don't squash tags detected. Please remove them before merging this PR."
           exit 1
