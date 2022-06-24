@@ -1,0 +1,19 @@
+name: Security PR handler
+
+on: 
+  pull_request:
+    types: [ synchronize, labeled, unlabeled, opened, reopened ]
+    inputs:
+      forbidden_tags:
+        default: 'DON''T MERGE;Don''t squash'
+        description: 'Tag1;Tag2;Tag3...'
+
+jobs:
+  Check-PR-Forbidden-Tags:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Forbidden tags detection
+        if: github.event.pull_request.labels.*.name == 'DON''T MERGE' || github.event.pull_request.labels.*.name == 'Don t squash'
+        run: | 
+          echo "Don't merge / Don't squash tags detected. Please remove them before merging this PR."
+          exit 1
