@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: Get configuration
         id: configuration
-        run: cat ../../config.txt
+        run: cat ./config.txt
       - name: Forbidden tags detection
         if: github.event.label.name == 'DON''T MERGE' || github.event.label.name == 'Don''t squash'
         run: | 
