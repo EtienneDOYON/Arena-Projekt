@@ -2,11 +2,11 @@ name: Security PR handler
 
 on: 
   pull_request:
-    types: [ push, labeled ]
+    types: [ synchronize, labeled, unlabeled, opened, reopened ]
 
 jobs:
   Check-PR-Forbidden-Tags:
-    if: ${{ github.event.label.name == 'DON\'T MERGE' || github.event.label.name == 'Don\'t squash' }}
+    if: ${{ github.event.label.name == 'DON%25T MERGE' || github.event.label.name == 'Don%25t squash' }}
     runs-on: ubuntu-latest
     steps:
       - name: Forbidden tags detected
