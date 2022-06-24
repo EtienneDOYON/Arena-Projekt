@@ -12,13 +12,6 @@ jobs:
   Check-PR-Forbidden-Tags:
     runs-on: ubuntu-latest
     steps:
-      - name: Trying around input
-        run: |
-          IFS=';' read -r -a array <<< ${{ github.event.inputs.forbidden_tags }}
-          for element in "${array[@]}"
-          do
-            echo "$element"
-          done
       - name: Forbidden tags detection
         if: github.event.label.name == 'DON''T MERGE' || github.event.label.name == 'Don''t squash'
         run: | 
