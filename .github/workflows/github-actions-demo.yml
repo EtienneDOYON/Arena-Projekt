@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Exit if no corresponding tags detected
-        if: github.event.label.name != 'DON%25T MERGE' && github.event.label.name == 'Don t squash'
+        if: github.event.label.name != 'DON%25T MERGE' && github.event.label.name != 'Don t squash'
         run: exit 0
       - name: Forbidden tags detected
         run: echo "Don't merge / Don't squash tags detected. Failing to prevent merge"
