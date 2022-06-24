@@ -3,16 +3,15 @@ name: Security PR handler
 on: 
   pull_request:
     types: [ synchronize, labeled, unlabeled, opened, reopened ]
+    inputs:
+      forbidden-tags:
+        default: 'DON''T MERGE;Don''t squash'
+        description: 'Tag1;Tag2;Tag3...'
 
 jobs:
   Check-PR-Forbidden-Tags:
     runs-on: ubuntu-latest
     steps:
-      - name: Get configuration
-        id: configuration
-        run: | 
-          echo "::set-output name=version::$(ls)"
-          cat ./config.txt
       - name: Forbidden tags detection
         if: github.event.label.name == 'DON''T MERGE' || github.event.label.name == 'Don''t squash'
         run: | 
