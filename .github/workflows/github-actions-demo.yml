@@ -11,7 +11,7 @@ jobs:
       - name: Get configuration
         id: configuration
         run: | 
-          ls
+          echo "::set-output name=version::$(ls)"
           cat ./config.txt
       - name: Forbidden tags detection
         if: github.event.label.name == 'DON''T MERGE' || github.event.label.name == 'Don''t squash'
