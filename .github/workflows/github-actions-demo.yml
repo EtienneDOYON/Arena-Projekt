@@ -6,7 +6,7 @@ on:
 
 jobs:
   Check-PR-Forbidden-Tags:
-    if: ${{ github.event.label.name == 'DON%25T MERGE' || github.event.label.name == 'Don%25t squash' }}
+    if: ${{ github.event.label.name == "DON%25T MERGE" || github.event.label.name == "Don t squash" }}
     runs-on: ubuntu-latest
     steps:
       - name: Forbidden tags detected
